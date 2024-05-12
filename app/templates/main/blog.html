@@ -1,0 +1,194 @@
+{% extends "../base.html" %}
+
+{% block title %}Wann - Blog{% endblock title %}
+{% load static %}
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .pagination a {
+        display: inline-block;
+        width: auto; /* Lebar tombol pagination */
+        height: auto; /* Tinggi tombol pagination */
+        line-height: 30px; /* Mengatur tinggi lini teks agar teks berada di tengah */
+        border-radius: 10%; /* Membuat sudut tombol bulat */
+        background-color: #DDE6ED;
+        color: #000;
+        margin: 0 5px;
+        text-decoration: none;
+        font-size: 16px; /* Ukuran font */
+    }
+    .pagination a:hover {
+        background-color: #B9B4C7;
+        color: #000;
+    }
+    .pagination .current {
+        margin: 0 5px;
+        font-size: 16px; /* Ukuran font */
+    }
+    .search-result-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .search-result-item img {
+        width: 40px;
+        height: 50px;
+        margin-right: 30px;
+    }
+    .search-result-item a {
+       color : #BED7DC;
+    }
+</style>
+<!-- Breadcrumb -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content" data-aos="fade-up">
+            <p>HOME - BLOG</p>
+            <h1 class="section-heading" data-aos="fade-up"><img src="{% static "assets/images/star-2.png" %}" alt="Star"> Blog <img src="{% static "assets/images/star-2.png" %}" alt="Star"></h1>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Items -->
+<section class="blog-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-items">
+                    {% for b in blog %}
+                    <div class="blog-item" data-aos="zoom-in">
+                        <div class="img-box">
+                            <img src="{{ b.image.url }}" alt="Blog">
+                        </div>
+                        <div class="content">
+                            <span class="meta">{{b.date}}</span>
+                            <h1><a href="{% url "blog_detail" b.id %}">{{b.title}}</a></h1>
+                            <p>{{b.content|truncatechars:250}}</p>
+                            <a href="{% url "blog_detail" b.id %}" class="theme-btn">Read More</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <span class="step-links">
+                            {% if blog.has_previous %}
+                            <a href="?page=1" class="page-link"><b>&laquo;</b> </a>
+                            <a href="?page={{ blog.previous_page_number }}" class="page-link"><b>&larr;</b></a>
+                            {% endif %}
+
+                            <span class="current">
+                                <b>Page {{ blog.number }} of {{ blog.paginator.num_pages }}.</b>
+                            </span>
+
+                            {% if blog.has_next %}
+                            <a href="?page={{ blog.next_page_number }}" class="page-link"><b>&rarr;</b></a>
+                            <a href="?page={{ blog.paginator.num_pages }}" class="page-link"><b>&raquo;</b></a>
+                            {% endif %}
+                        </span>
+                    </div>
+                    <!-- End Pagination -->
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="blog-sidebar">
+                    <div class="blog-sidebar-inner">
+                        <!-- Search Widget -->
+                        <div class="blog-sidebar-widget search-widget">
+                            <div class="blog-sidebar-widget-inner" data-aos="zoom-in">
+                                <form class="shadow-box">
+                                    <input type="text" id="searchInput" placeholder="Search Here...">
+                                    <!-- Tambahkan div untuk menampilkan hasil pencarian -->
+                                    <div id="searchResults"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- End Search Widget -->
+                        <!-- Recent Posts Widget -->
+                        <div class="blog-sidebar-widget recent-post-widget" data-aos="zoom-in">
+                            <div class="blog-sidebar-widget-inner shadow-box">
+                                <h3>Postingan Terbaru</h3>
+                                <ul>
+                                    {% for t in terbaru %}
+                                    <li><a href="{% url "blog_detail" t.id %}">{{t.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Recent Posts Widget -->
+                        <!-- Tags Widget -->
+                        <div class="blog-sidebar-widget tags-widget" data-aos="zoom-in">
+                            <div class="blog-sidebar-widget-inner shadow-box">
+                                <h3>Kategori</h3>
+                                <ul>
+                                    {% for k in kategori %}
+                                    <li><a class="theme-btn" href="{% url 'blog_by_category' k.id %}">{{k.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Tags Widget -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Fungsi untuk menangani live search
+    function performSearch() {
+        const searchInput = document.getElementById('searchInput').value.trim();
+
+        // Lakukan permintaan AJAX ke endpoint pencarian dengan kata kunci
+        if (searchInput.length > 0) {
+            fetch(`/search/?query=${encodeURIComponent(searchInput)}`)
+                .then(response => response.json())
+                .then(data => {
+                    const searchResults = document.getElementById('searchResults');
+                    // Bersihkan hasil pencarian sebelumnya
+                    searchResults.innerHTML = '';
+
+                    // Batasi jumlah hasil maksimal menjadi 7
+                    const limitedData = data.slice(0, 5);
+
+                    // Tampilkan hasil pencarian
+                    if (limitedData && limitedData.length > 0) {
+                        limitedData.forEach(item => {
+                            const resultItem = document.createElement('div');
+                            // Tampilkan gambar dan judul
+                            resultItem.innerHTML = `
+                                <div class="search-result-item">
+                                    <img src="${item.image}" alt="${item.title}">
+                                    <a href="/blog/detail/${item.id}/">${item.title}</a>
+                                </div>
+                            `;
+                            searchResults.appendChild(resultItem);
+                        });
+                    } else {
+                        searchResults.innerHTML = 'No results found';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
+                });
+        } else {
+            // Bersihkan hasil pencarian jika input kosong
+            document.getElementById('searchResults').innerHTML = '';
+        }
+    }
+
+
+
+    // Tambahkan event listener untuk memanggil performSearch saat input berubah
+    document.getElementById('searchInput').addEventListener('input', performSearch);
+</script>
+
+{% endblock content %}

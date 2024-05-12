@@ -1,0 +1,40 @@
+{% extends "../base.html" %}
+
+{% block title %}Wann - Blog detail{% endblock title %}
+{% load static %}
+{% block content %}
+<!-- Breadcrumb -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content" data-aos="fade-up">
+            <p>HOME - BLOG DETAILS</p>
+            <h1 class="section-heading"><img src="{% static "assets/images/star-2.png" %}" alt="Star"> Blog Details <img src="{% static "assets/images/star-2.png" %}" alt="Star"></h1>
+        </div>
+    </div>
+</section>
+
+
+<!-- Blog Details -->
+<section class="blog-details-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="blog-details-content">
+                    <div class="img-box">
+                        <img src="{{b.image.url}}" alt="Blog" width="500px" height="500px">
+                    </div>
+                    <span class="meta">{{b.date}}</span>
+                    <h1>{{b.title}}</h1>
+                    <p>{{b.content}}</p>
+
+                    <div class="tags">
+                        <a href="#" class="theme-btn">SASS</a>
+                        <a href="#" class="theme-btn">Development</a>
+                    </div>
+                </div>
+            </div>
+            <center><a href="{{ request.META.HTTP_REFERER }}" class="theme-btn">Kembali</a></center>
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% load static %}
+<!-- Footer -->
+<footer class="footer-area">
+    <div class="container">
+        <div class="footer-content text-center">
+            <a href="index.html" class="logo">
+                <img src="{% static "assets/images/logoo.png" %}" width="150px" alt="Logo">
+            </a>
+            <ul class="footer-menu">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About</a></li>
+                <li><a href="{% url "project" %}">Project</a></li>
+                <li><a href="{% url "blog" %}">Blog</a></li>
+                <li><a href="{% url "contact" %}">Contact</a></li>
+            </ul>
+            <p class="copyright">
+                &copy; Fransiskus <span>Riswan</span> Indra Simbolon
+            </p>
+        </div>
+    </div>
+</footer>
+
+</main>

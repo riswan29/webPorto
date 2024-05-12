@@ -1,0 +1,33 @@
+{% load static %}
+
+<main class="main-homepage">
+
+    <!-- Header -->
+    <header class="header-area">
+        <div class="container">
+            <div class="gx-row d-flex align-items-center justify-content-between">
+                <a href="{% url "home" %}" class="logo">
+                    <img src="{% static "assets/images/logoo.png" %}" alt="Logo" width="100px">
+                </a>
+
+                <nav class="navbar">
+                    <ul class="menu">
+                        <li {% if request.path == "/" %}class="active"{% endif %}><a href="{% url "home" %}">Home</a></li>
+                        <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="{% url "about" %}">About</a></li>
+                        <li {% if request.path == "/project/" %}class="active"{% endif %}><a href="{% url "project" %}">Project</a></li>
+                        <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="{% url "blog" %}">Blog</a></li>
+                        <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="{% url "contact" %}">Contact</a></li>
+                    </ul>
+                    <a href="{% url "contact" %}" class="theme-btn">Let's talk</a>
+                </nav>
+
+                <a href="{% url "contact" %}" class="theme-btn">Let's talk</a>
+
+                <div class="show-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>

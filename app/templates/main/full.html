@@ -1,0 +1,285 @@
+{% load static %}
+
+{% block contetn %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WannN - Personal Portfolio</title>
+    <link rel="shortcut icon" href="{% static "assets/images/ico.png" %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static "assets/css/iconoir.css" %}">
+
+    <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/aos.css" %}">
+
+    <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+</head>
+<body>
+
+    <main class="main-homepage">
+
+        <!-- Header -->
+        <header class="header-area">
+            <div class="container">
+                <div class="gx-row d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="logo">
+                        <img src="{% static "assets/images/logoo.png" %}" alt="Logo" width="100px">
+                    </a>
+
+                    <nav class="navbar">
+                        <ul class="menu">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="works.html">Works</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <a href="contact.html" class="theme-btn">Let's talk</a>
+                    </nav>
+
+                    <a href="contact.html" class="theme-btn">Let's talk</a>
+
+                    <div class="show-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About -->
+        <section class="about-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6" data-aos="zoom-in">
+                        <div class="about-me-box shadow-box">
+                            <a class="overlay-link" href="about.html"></a>
+                            <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                            <div class="img-box">
+                                <img src="{% static "assets/images/riswan.jpeg" %}" alt="About Me">
+                            </div>
+                            <div class="infos">
+                                <h4>WEB DEVELOPER & AI ENTHUSIAST</h4>
+                                <h1>Riswan Simbolon</h1>
+                                <p>Seorang yang memiliki ketertarikan di bidang teknologi dan AI, serta memiliki pengalaman dalam pengembangan website dan aplikasi.</p>
+                                <a href="#" class="about-btn">
+                                    <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="about-credentials-wrap">
+                            <div data-aos="zoom-in">
+                                <div class="banner shadow-box">
+                                    <div class="marquee">
+                                        <div>
+                                          <span>WELCOME MAMANK <b>LAGI MANTAU YA</b> <img src="{% static "assets/images/star1.svg" %}" alt="Star"> WELCOME MAMANK <b>LAGI MANTAU YA</b> <img src="{% static "assets/images/star1.svg" %}" alt="Star"> WELCOME MAMANK <b>LAGI MANTAU YA</b> <img src="{% static "assets/images/star1.svg" %}" alt="Star"> WELCOME MAMANK <b>LAGI MANTAU YA</b> WELCOME MAMANK <img src="{% static "assets/images/star1.svg" %}" alt="Star"> WELCOME MAMANK <b>LAGI MANTAU YA</b> WELCOME MAMANK <img src="{% static "assets/images/star1.svg" %}" alt="Star"></span>
+                                        </div>
+                                      </div>
+                                </div>
+
+                            </div>
+
+                            <div class="gx-row d-flex gap-24">
+                                <div data-aos="zoom-in">
+                                    <div class="about-crenditials-box info-box shadow-box h-full">
+                                        <a class="overlay-link" href="credentials.html"></a>
+                                        <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                                        <img src="{% static "assets/images/sign.png" %}" alt="Sign">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="infos">
+                                                <h4>more about me</h4>
+                                                <h1>Credentials</h1>
+                                            </div>
+
+                                            <a href="credentials.html" class="about-btn">
+                                                <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div data-aos="zoom-in">
+                                    <div class="about-project-box info-box shadow-box h-full">
+                                        <a class="overlay-link" href="works.html"></a>
+                                        <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                                        <center>
+                                        <i class="iconoir-task-list" style="font-size: 100px;"></i>
+                                        </center>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="infos">
+                                                <h4>SHOWCASE</h4>
+                                                <h1>Projects</h1>
+                                            </div>
+
+                                            <a href="#" class="about-btn">
+                                                <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-24">
+                    <div class="col-md-12">
+                        <div class="blog-service-profile-wrap d-flex gap-24">
+                            <div data-aos="zoom-in">
+                                <div class="about-blog-box info-box shadow-box h-full">
+                                    <a href="blog.html" class="overlay-link"></a>
+                                    <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                                    <center>
+                                    <i class="iconoir-medium" style="font-size: 180px;"></i>
+                                    </center>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="infos">
+                                            <h4>Blog</h4>
+                                            <h1>My Blog</h1>
+                                        </div>
+
+                                        <a href="blog.html" class="about-btn">
+                                            <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-aos="zoom-in" class="flex-1">
+                                <div class="about-services-box info-box shadow-box h-full">
+                                    <a href="service.html" class="overlay-link"></a>
+                                    <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                                    <div class="icon-boxes">
+                                        <i class="iconoir-database"></i>
+                                        <i class="iconoir-internet"></i>
+                                        <i class="iconoir-book"></i>
+                                        <i class="iconoir-code"></i>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="infos">
+                                            <h4>Spesialisasi</h4>
+                                            <h1>Pengembangan Web & AI</h1>
+                                        </div>
+
+                                        <a href="service.html" class="about-btn">
+                                            <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-aos="zoom-in">
+                                <div class="about-profile-box info-box shadow-box h-full">
+                                    <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                                    <div class="inner-profile-icons shadow-box">
+                                        <a href="#">
+                                            <i class="iconoir-instagram"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="iconoir-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="infos">
+                                            <h4>Stay with me</h4>
+                                            <h1>Profiles</h1>
+                                        </div>
+
+                                        <a href="contact.html" class="about-btn">
+                                            <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mt-24">
+                    <div class="col-md-6" data-aos="zoom-in">
+
+                        <div class="about-client-box info-box shadow-box">
+                            <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                            <div class="clients d-flex align-items-start gap-24 justify-content-center">
+                                <div class="client-item">
+                                    <h1>07</h1>
+                                    <p>Years <br>Experience</p>
+                                </div>
+
+                                <div class="client-item">
+                                    <h1>+125</h1>
+                                    <p>CLIENTS <br>WORLDWIDE</p>
+                                </div>
+
+                                <div class="client-item">
+                                    <h1>+210</h1>
+                                    <p>Total <br>Projects</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6" data-aos="zoom-in">
+
+                        <div class="about-contact-box info-box shadow-box">
+                            <a class="overlay-link" href="contact.html"></a>
+                            <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                            <img src="{% static "assets/images/icon2.png" %}" alt="Icon" class="star-icon">
+                            <h1>Let's <br>work <span>together.</span></h1>
+                            <a href="#" class="about-btn">
+                                <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="footer-content text-center">
+                    <a href="index.html" class="logo">
+                        <img src="{% static "assets/images/logoo.png" %}" width="150px" alt="Logo">
+                    </a>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="works.html">Works</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <p class="copyright">
+                        &copy; All rights reserved by <span>WordPress River</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+
+    <script src="{% static "assets/js/jquery-3.6.4.js" %}"></script>
+    <script src="{% static "assets/js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "assets/js/aos.js" %}"></script>
+    <script src="{% static "assets/js/main.js" %}"></script>
+</body>
+
+<!-- Mirrored from wpriverthemes.com/landing/gridx-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Mar 2024 05:24:17 GMT -->
+</html>
+
+{% endblock contetn %}

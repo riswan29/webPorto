@@ -1,0 +1,148 @@
+{% extends "../base.html" %}
+{% block title %}Wann - About Profile{% endblock title %}
+{% load static %}
+{% block content %}
+<section class="about-area">
+    <div class="container">
+        <div class="d-flex about-me-wrap align-items-start gap-24">
+            <div data-aos="zoom-in">
+                <div class="about-image-box shadow-box">
+                    <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                    <div class="image-inner">
+                        <img src="{% static "assets/images/riswan.jpeg" %}" alt="About Me">
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-details" data-aos="zoom-in">
+                <h1 class="section-heading" data-aos="fade-up"><img src="{% static "assets/images/star-2.png" %}" alt="Star"> Tentang Saya <img src="{% static "assets/images/star-2.png" %}" alt="Star"></h1>
+                <div class="about-details-inner shadow-box">
+                    <img src="{% static "assets/images/icon2.png" %}" alt="Star">
+                    <h1>Riswan Simbolon</h1>
+                    <p>Fransiskus Riswan Indra Simbolon, seorang yang memiliki ketertarikan di bidang teknologi informasi dan AI. Saya adalah seorang yang memiliki pengalaman dalam bidang, pembuatan website, mobile app, dan perancangan AI.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row mt-24">
+            <div class="col-md-6" data-aos="zoom-in">
+                <div class="about-edc-exp about-experience shadow-box">
+                    <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                    <h3>Pengalaman</h3>
+
+                    <ul>
+                        <li>
+                            <p class="date">November 2023 - Februari 2024</p>
+                            <h2>IT Support</h2>
+                            <p class="type">Golkar</p>
+                        </li>
+                        <li>
+                            <p class="date">Maret 2023 - Mei 2023</p>
+                            <h2>Data Scientist(Magang)</h2>
+                            <p class="type">ID/X Partners</p>
+                        </li>
+                        <li>
+                            <p class="date">Februari 2023 - Maret 2023</p>
+                            <h2>Data Scientist(Magang)</h2>
+                            <p class="type">Home Credit</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="zoom-in">
+                <div class="about-edc-exp about-education shadow-box">
+                    <img src="assets/images/bg1.png" alt="BG" class="bg-img">
+                    <h3>Pendidikan</h3>
+
+                    <ul>
+                        <li>
+                            <p class="date">September 2019 - Desember 2024</p>
+                            <h2>Sarjana Teknik Informatika</h2>
+                            <p class="type">University Efarina</p>
+                        </li>
+                        <li>
+                            <p class="date">Agustus 2022 - Desember 2022</p>
+                            <h2>AI for StartUp (MBKM)</h2>
+                            <p class="type">Power Academy</p>
+                        </li>
+                        <li>
+                            <p class="date">Februari 2022 - Juli 2022</p>
+                            <h2>Machine Learning (MBKM)</h2>
+                            <p class="type">Bangkit Academy</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-24">
+            <div class="col-md-12">
+                <div class="d-flex profile-contact-credentials-wrap gap-24">
+
+                    <div data-aos="zoom-in">
+                        <div class="about-profile-box info-box shadow-box h-full">
+                            <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                            <div class="inner-profile-icons shadow-box">
+                                <a href="https://www.instagram.com/_wann29_/" title="INSTAGRAM : riswan29">
+                                    <i class="iconoir-instagram"></i>
+                                </a>
+                                <a href="https://web.facebook.com/profile.php?id=100095318254950" title="FACEBOOK : riswan29">
+                                    <i class="iconoir-facebook"></i>
+                                </a>
+                                </a>
+                                <a href="https://github.com/riswan29" title='GITHUB : riswan29'>
+                                    <i class="iconoir-github"></i>
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="infos">
+                                    <h4>Stay with me</h4>
+                                    <h1>Profiles</h1>
+                                </div>
+
+                                <a href="{% url "contact" %}" class="about-btn">
+                                    <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="zoom-in" class="flex-1">
+                        <div class="about-contact-box info-box shadow-box">
+                            <a class="overlay-link" href="{% url "contact" %}"></a>
+                            <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                            <img src="{% static "assets/images/icon2.png" %}" alt="Icon" class="star-icon">
+                            <h1>Let's <br>work <span>together.</span></h1>
+                            <a href="{% url "contact" %}" class="about-btn">
+                                <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div data-aos="zoom-in" class="h-full">
+                        <div class="about-crenditials-box info-box shadow-box">
+                            <a class="overlay-link" href="{% url "credential" %}"></a>
+                            <img src="{% static "assets/images/bg1.png" %}" alt="BG" class="bg-img">
+                            <img src="{% static "assets/images/sign.png" %}" alt="Sign">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="infos">
+                                    <h4>more about me</h4>
+                                    <h1>Credentials</h1>
+                                </div>
+
+                                <a href="credentials.html" class="about-btn">
+                                    <img src="{% static "assets/images/icon.svg" %}" alt="Button">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
